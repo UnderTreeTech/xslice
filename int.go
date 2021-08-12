@@ -16,10 +16,18 @@ func ContainInt8(s []int8, target int8) bool {
 
 // RemoveInt8 remove empty target elements from ss
 func RemoveInt8(s []int8, target int8) []int8 {
-	var ret = make([]int8, 0)
-	for _, val := range s {
-		if val != target {
-			ret = append(ret, val)
+	var ret = make([]int8, len(s)-1)
+	var targetFind bool
+	for index, val := range s {
+		if val == target {
+			targetFind = true
+			continue
+		}
+
+		if targetFind {
+			ret[index-1] = val
+		} else {
+			ret[index] = val
 		}
 	}
 	return ret
@@ -110,10 +118,18 @@ func ContainUint8(s []uint8, target uint8) bool {
 
 // RemoveUint8 remove empty target elements from ss
 func RemoveUint8(s []uint8, target uint8) []uint8 {
-	var ret = make([]uint8, 0)
-	for _, val := range s {
-		if val != target {
-			ret = append(ret, val)
+	var ret = make([]uint8, len(s)-1)
+	var targetFind bool
+	for index, val := range s {
+		if val == target {
+			targetFind = true
+			continue
+		}
+
+		if targetFind {
+			ret[index-1] = val
+		} else {
+			ret[index] = val
 		}
 	}
 	return ret
@@ -204,10 +220,18 @@ func ContainInt16(s []int16, target int16) bool {
 
 // RemoveInt16 remove empty target elements from ss
 func RemoveInt16(s []int16, target int16) []int16 {
-	var ret = make([]int16, 0)
-	for _, val := range s {
-		if val != target {
-			ret = append(ret, val)
+	var ret = make([]int16, len(s)-1)
+	var targetFind bool
+	for index, val := range s {
+		if val == target {
+			targetFind = true
+			continue
+		}
+
+		if targetFind {
+			ret[index-1] = val
+		} else {
+			ret[index] = val
 		}
 	}
 	return ret
@@ -298,10 +322,18 @@ func ContainUint16(s []uint16, target uint16) bool {
 
 // RemoveUint16 remove empty target elements from ss
 func RemoveUint16(s []uint16, target uint16) []uint16 {
-	var ret = make([]uint16, 0)
-	for _, val := range s {
-		if val != target {
-			ret = append(ret, val)
+	var ret = make([]uint16, len(s)-1)
+	var targetFind bool
+	for index, val := range s {
+		if val == target {
+			targetFind = true
+			continue
+		}
+
+		if targetFind {
+			ret[index-1] = val
+		} else {
+			ret[index] = val
 		}
 	}
 	return ret
@@ -392,10 +424,18 @@ func ContainInt(s []int, target int) bool {
 
 // RemoveInt remove empty target elements from ss
 func RemoveInt(s []int, target int) []int {
-	var ret = make([]int, 0)
-	for _, val := range s {
-		if val != target {
-			ret = append(ret, val)
+	var ret = make([]int, len(s)-1)
+	var targetFind bool
+	for index, val := range s {
+		if val == target {
+			targetFind = true
+			continue
+		}
+
+		if targetFind {
+			ret[index-1] = val
+		} else {
+			ret[index] = val
 		}
 	}
 	return ret
@@ -486,10 +526,18 @@ func ContainUint(s []uint, target uint) bool {
 
 // RemoveUint remove empty target elements from ss
 func RemoveUint(s []uint, target uint) []uint {
-	var ret = make([]uint, 0)
-	for _, val := range s {
-		if val != target {
-			ret = append(ret, val)
+	var ret = make([]uint, len(s)-1)
+	var targetFind bool
+	for index, val := range s {
+		if val == target {
+			targetFind = true
+			continue
+		}
+
+		if targetFind {
+			ret[index-1] = val
+		} else {
+			ret[index] = val
 		}
 	}
 	return ret
@@ -580,10 +628,18 @@ func ContainInt32(s []int32, target int32) bool {
 
 // RemoveInt32 remove empty target elements from ss
 func RemoveInt32(s []int32, target int32) []int32 {
-	var ret = make([]int32, 0)
-	for _, val := range s {
-		if val != target {
-			ret = append(ret, val)
+	var ret = make([]int32, len(s)-1)
+	var targetFind bool
+	for index, val := range s {
+		if val == target {
+			targetFind = true
+			continue
+		}
+
+		if targetFind {
+			ret[index-1] = val
+		} else {
+			ret[index] = val
 		}
 	}
 	return ret
@@ -674,10 +730,18 @@ func ContainUint32(s []uint32, target uint32) bool {
 
 // RemoveUint32 remove empty target elements from ss
 func RemoveUint32(s []uint32, target uint32) []uint32 {
-	var ret = make([]uint32, 0)
-	for _, val := range s {
-		if val != target {
-			ret = append(ret, val)
+	var ret = make([]uint32, len(s)-1)
+	var targetFind bool
+	for index, val := range s {
+		if val == target {
+			targetFind = true
+			continue
+		}
+
+		if targetFind {
+			ret[index-1] = val
+		} else {
+			ret[index] = val
 		}
 	}
 	return ret
@@ -768,10 +832,18 @@ func ContainInt64(s []int64, target int64) bool {
 
 // RemoveInt64 remove empty target elements from ss
 func RemoveInt64(s []int64, target int64) []int64 {
-	var ret = make([]int64, 0)
-	for _, val := range s {
-		if val != target {
-			ret = append(ret, val)
+	var ret = make([]int64, len(s)-1)
+	var targetFind bool
+	for index, val := range s {
+		if val == target {
+			targetFind = true
+			continue
+		}
+
+		if targetFind {
+			ret[index-1] = val
+		} else {
+			ret[index] = val
 		}
 	}
 	return ret
@@ -862,10 +934,18 @@ func ContainUint64(s []uint64, target uint64) bool {
 
 // RemoveUint64 remove empty target elements from ss
 func RemoveUint64(s []uint64, target uint64) []uint64 {
-	var ret = make([]uint64, 0)
-	for _, val := range s {
-		if val != target {
-			ret = append(ret, val)
+	var ret = make([]uint64, len(s)-1)
+	var targetFind bool
+	for index, val := range s {
+		if val == target {
+			targetFind = true
+			continue
+		}
+
+		if targetFind {
+			ret[index-1] = val
+		} else {
+			ret[index] = val
 		}
 	}
 	return ret

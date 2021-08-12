@@ -24,10 +24,18 @@ func ContainKeyType(s []KeyType, target KeyType) bool {
 
 // RemoveKeyType remove empty target elements from ss
 func RemoveKeyType(s []KeyType, target KeyType) []KeyType {
-	var ret = make([]KeyType, 0)
-	for _, val := range s {
-		if val != target {
-			ret = append(ret, val)
+	var ret = make([]KeyType, len(s) -1)
+	var targetFind bool
+	for index, val := range s {
+		if val == target {
+			targetFind = true
+			continue
+		}
+
+		if targetFind {
+			ret[index-1] = val
+		}else {
+			ret[index] = val
 		}
 	}
 	return ret

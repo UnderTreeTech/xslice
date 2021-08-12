@@ -16,10 +16,18 @@ func ContainFloat64(s []float64, target float64) bool {
 
 // RemoveFloat64 remove empty target elements from ss
 func RemoveFloat64(s []float64, target float64) []float64 {
-	var ret = make([]float64, 0)
-	for _, val := range s {
-		if val != target {
-			ret = append(ret, val)
+	var ret = make([]float64, len(s)-1)
+	var targetFind bool
+	for index, val := range s {
+		if val == target {
+			targetFind = true
+			continue
+		}
+
+		if targetFind {
+			ret[index-1] = val
+		} else {
+			ret[index] = val
 		}
 	}
 	return ret
