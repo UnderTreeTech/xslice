@@ -16,21 +16,15 @@ func ContainString(s []string, target string) bool {
 
 // RemoveString remove empty target elements from ss
 func RemoveString(s []string, target string) []string {
-	var ret = make([]string, len(s)-1)
-	var targetFind bool
+	var offset int
 	for index, val := range s {
 		if val == target {
-			targetFind = true
-			continue
-		}
-
-		if targetFind {
-			ret[index-1] = val
-		} else {
-			ret[index] = val
+			s[offset], s[index] = s[index], s[offset]
+			offset++
 		}
 	}
-	return ret
+
+	return s[offset:]
 }
 
 // ReverseString reverse the input slice

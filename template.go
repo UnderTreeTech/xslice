@@ -24,21 +24,15 @@ func ContainKeyType(s []KeyType, target KeyType) bool {
 
 // RemoveKeyType remove empty target elements from ss
 func RemoveKeyType(s []KeyType, target KeyType) []KeyType {
-	var ret = make([]KeyType, len(s) -1)
-	var targetFind bool
+	var offset int
 	for index, val := range s {
 		if val == target {
-			targetFind = true
-			continue
-		}
-
-		if targetFind {
-			ret[index-1] = val
-		}else {
-			ret[index] = val
+			s[offset], s[index] = s[index], s[offset]
+			offset++
 		}
 	}
-	return ret
+
+	return s[offset:]
 }
 
 // ReverseKeyType reverse the input slice

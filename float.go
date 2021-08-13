@@ -16,21 +16,15 @@ func ContainFloat64(s []float64, target float64) bool {
 
 // RemoveFloat64 remove empty target elements from ss
 func RemoveFloat64(s []float64, target float64) []float64 {
-	var ret = make([]float64, len(s)-1)
-	var targetFind bool
+	var offset int
 	for index, val := range s {
 		if val == target {
-			targetFind = true
-			continue
-		}
-
-		if targetFind {
-			ret[index-1] = val
-		} else {
-			ret[index] = val
+			s[offset], s[index] = s[index], s[offset]
+			offset++
 		}
 	}
-	return ret
+
+	return s[offset:]
 }
 
 // ReverseFloat64 reverse the input slice

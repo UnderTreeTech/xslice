@@ -16,21 +16,15 @@ func ContainInt8(s []int8, target int8) bool {
 
 // RemoveInt8 remove empty target elements from ss
 func RemoveInt8(s []int8, target int8) []int8 {
-	var ret = make([]int8, len(s)-1)
-	var targetFind bool
+	var offset int
 	for index, val := range s {
 		if val == target {
-			targetFind = true
-			continue
-		}
-
-		if targetFind {
-			ret[index-1] = val
-		} else {
-			ret[index] = val
+			s[offset], s[index] = s[index], s[offset]
+			offset++
 		}
 	}
-	return ret
+
+	return s[offset:]
 }
 
 // ReverseInt8 reverse the input slice
@@ -118,21 +112,15 @@ func ContainUint8(s []uint8, target uint8) bool {
 
 // RemoveUint8 remove empty target elements from ss
 func RemoveUint8(s []uint8, target uint8) []uint8 {
-	var ret = make([]uint8, len(s)-1)
-	var targetFind bool
+	var offset int
 	for index, val := range s {
 		if val == target {
-			targetFind = true
-			continue
-		}
-
-		if targetFind {
-			ret[index-1] = val
-		} else {
-			ret[index] = val
+			s[offset], s[index] = s[index], s[offset]
+			offset++
 		}
 	}
-	return ret
+
+	return s[offset:]
 }
 
 // ReverseUint8 reverse the input slice
@@ -220,21 +208,15 @@ func ContainInt16(s []int16, target int16) bool {
 
 // RemoveInt16 remove empty target elements from ss
 func RemoveInt16(s []int16, target int16) []int16 {
-	var ret = make([]int16, len(s)-1)
-	var targetFind bool
+	var offset int
 	for index, val := range s {
 		if val == target {
-			targetFind = true
-			continue
-		}
-
-		if targetFind {
-			ret[index-1] = val
-		} else {
-			ret[index] = val
+			s[offset], s[index] = s[index], s[offset]
+			offset++
 		}
 	}
-	return ret
+
+	return s[offset:]
 }
 
 // ReverseInt16 reverse the input slice
@@ -322,21 +304,15 @@ func ContainUint16(s []uint16, target uint16) bool {
 
 // RemoveUint16 remove empty target elements from ss
 func RemoveUint16(s []uint16, target uint16) []uint16 {
-	var ret = make([]uint16, len(s)-1)
-	var targetFind bool
+	var offset int
 	for index, val := range s {
 		if val == target {
-			targetFind = true
-			continue
-		}
-
-		if targetFind {
-			ret[index-1] = val
-		} else {
-			ret[index] = val
+			s[offset], s[index] = s[index], s[offset]
+			offset++
 		}
 	}
-	return ret
+
+	return s[offset:]
 }
 
 // ReverseUint16 reverse the input slice
@@ -424,21 +400,15 @@ func ContainInt(s []int, target int) bool {
 
 // RemoveInt remove empty target elements from ss
 func RemoveInt(s []int, target int) []int {
-	var ret = make([]int, len(s)-1)
-	var targetFind bool
+	var offset int
 	for index, val := range s {
 		if val == target {
-			targetFind = true
-			continue
-		}
-
-		if targetFind {
-			ret[index-1] = val
-		} else {
-			ret[index] = val
+			s[offset], s[index] = s[index], s[offset]
+			offset++
 		}
 	}
-	return ret
+
+	return s[offset:]
 }
 
 // ReverseInt reverse the input slice
@@ -526,21 +496,15 @@ func ContainUint(s []uint, target uint) bool {
 
 // RemoveUint remove empty target elements from ss
 func RemoveUint(s []uint, target uint) []uint {
-	var ret = make([]uint, len(s)-1)
-	var targetFind bool
+	var offset int
 	for index, val := range s {
 		if val == target {
-			targetFind = true
-			continue
-		}
-
-		if targetFind {
-			ret[index-1] = val
-		} else {
-			ret[index] = val
+			s[offset], s[index] = s[index], s[offset]
+			offset++
 		}
 	}
-	return ret
+
+	return s[offset:]
 }
 
 // ReverseUint reverse the input slice
@@ -628,21 +592,15 @@ func ContainInt32(s []int32, target int32) bool {
 
 // RemoveInt32 remove empty target elements from ss
 func RemoveInt32(s []int32, target int32) []int32 {
-	var ret = make([]int32, len(s)-1)
-	var targetFind bool
+	var offset int
 	for index, val := range s {
 		if val == target {
-			targetFind = true
-			continue
-		}
-
-		if targetFind {
-			ret[index-1] = val
-		} else {
-			ret[index] = val
+			s[offset], s[index] = s[index], s[offset]
+			offset++
 		}
 	}
-	return ret
+
+	return s[offset:]
 }
 
 // ReverseInt32 reverse the input slice
@@ -730,21 +688,15 @@ func ContainUint32(s []uint32, target uint32) bool {
 
 // RemoveUint32 remove empty target elements from ss
 func RemoveUint32(s []uint32, target uint32) []uint32 {
-	var ret = make([]uint32, len(s)-1)
-	var targetFind bool
+	var offset int
 	for index, val := range s {
 		if val == target {
-			targetFind = true
-			continue
-		}
-
-		if targetFind {
-			ret[index-1] = val
-		} else {
-			ret[index] = val
+			s[offset], s[index] = s[index], s[offset]
+			offset++
 		}
 	}
-	return ret
+
+	return s[offset:]
 }
 
 // ReverseUint32 reverse the input slice
@@ -832,21 +784,15 @@ func ContainInt64(s []int64, target int64) bool {
 
 // RemoveInt64 remove empty target elements from ss
 func RemoveInt64(s []int64, target int64) []int64 {
-	var ret = make([]int64, len(s)-1)
-	var targetFind bool
+	var offset int
 	for index, val := range s {
 		if val == target {
-			targetFind = true
-			continue
-		}
-
-		if targetFind {
-			ret[index-1] = val
-		} else {
-			ret[index] = val
+			s[offset], s[index] = s[index], s[offset]
+			offset++
 		}
 	}
-	return ret
+
+	return s[offset:]
 }
 
 // ReverseInt64 reverse the input slice
@@ -934,21 +880,15 @@ func ContainUint64(s []uint64, target uint64) bool {
 
 // RemoveUint64 remove empty target elements from ss
 func RemoveUint64(s []uint64, target uint64) []uint64 {
-	var ret = make([]uint64, len(s)-1)
-	var targetFind bool
+	var offset int
 	for index, val := range s {
 		if val == target {
-			targetFind = true
-			continue
-		}
-
-		if targetFind {
-			ret[index-1] = val
-		} else {
-			ret[index] = val
+			s[offset], s[index] = s[index], s[offset]
+			offset++
 		}
 	}
-	return ret
+
+	return s[offset:]
 }
 
 // ReverseUint64 reverse the input slice
